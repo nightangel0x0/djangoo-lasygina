@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{%block title%}Отправка сообщения{% endblock %}
+
+{%block content%}
+<h1>Сообщение</h1>
+
+  <form class="poll" method="post">
+    {% csrf_token %}
+    {{ form.name }}
+    <br>
+    {{ form.message }}
+    <br>
+    {{ form.room }}
+    
+    <span>{{ error }}</span>
+    <button type="submit" >Отправить сообщение </button>
+  </form>
+
+{% endblock %}
